@@ -68,11 +68,22 @@ git init
 
 # 第二部分：Git本地与远程操作
 1	在GitHub上创建一个仓库，如 gitnote
+
 2	查看GitHub是否配置了当前操作计算机的ssh-key
 	(1)查看本地计算机：用户/.ssh ，没有，则创建：
 		ssh-keygen -t rsa -C "本地计算机设定的git邮箱"
 	(2)创建完成后，将id_rsa.pub文件的内容添加到GitHub中
+	
 3	使用下面的Git命令将本地Git版本库与GitHub仓库关联起来：
 	git remote add origin https://github.com/Lissonor/gitnote.git
+	
 4	推送本地代码到GitHub的gitnote库：
 	git push -u origin master【origin指远程库、master指本地库】
+	
+5	首次推送本地仓库代码到远程仓库时，需要两个步骤：
+	(1)建立与远程库的联系：git remote add origin https://github.com/Lissonor/gitnote.git
+	(2)将代码推送到远程库：git push -u origin master
+	注意：如果在与远程库建立联系后，可以直接使用一下命令即可到达到推送目的。
+		  原因是本地项目已经和远程项目关联上了，无序重复操作。
+		git push origin master
+	
